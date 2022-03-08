@@ -25,6 +25,18 @@ $(document).ready(function() {
     $("th").click(function(event) {
         id = event.target.id;
         
+        /*
+        let rI = $(this).parent().index();
+        let cI = $(this).index();
+        console.log("RI: ",rI," CI: ",cI);
+
+        $("tr").eq(rI).addClass("test");
+        for (let i=(cI-1); i<10; i+=3) {
+            $("td").eq(i).addClass("test");
+
+        }
+        */
+        
         deselectAll();
         
         if (id[0] == 0 && id[1] != 0) {
