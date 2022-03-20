@@ -4,11 +4,11 @@ body {
 
 .spreadsheettable {
     table-layout: fixed;
-    width: 600px;
+    width: 500px;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 2em;
+    margin-top: 10em;
 }
 
 td {
@@ -36,16 +36,3 @@ th {
     background-color: red;
 }
 
-.userinput {
-    width: 40px;
-}
-
-#barChart {
-    display: block;
-    justify-content: center;
-    position: center;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
-}
