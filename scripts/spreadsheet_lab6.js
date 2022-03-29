@@ -191,28 +191,24 @@ function selectColumn(colIndex, data) {
 } 
 
 $(document).ready(function() {
-    $.ajax({
-        type: "GET", 
-        url: "./data/grades.csv",
-        dataType: "text",
-        success: function(response){
-            console.log("success"); 
-            console.log(response);
-            let rows = response.split('\n');
+    fetch('../data/spreadsheet_lab6.csv')
+        .then((response) => response.text())
+        .then(function(content) {
+            let rows = content.split('\n');
             // let hHeaders = rows[0].split(','); // row 0
             // let vHeaders = [];
             // for (let i=0; i<rows.length; i++) {
             //     vHeaders.push(rows[i].split(',')[0]); // col 0 
             // }
-    
+
             let dataList = new Array(rows.length);
-    
+
             let table, tr, th, td;
-    
+
             table = document.createElement('table');
             table.setAttribute('class', 'spreadsheettable');
             table.setAttribute('cellspacing', '0');
-    
+
             for (let i=0; i<rows.length; i++) {
                 tr = document.createElement('tr');
                 dataList[i] = new Array(rows[0].split(',').length);
@@ -230,7 +226,7 @@ $(document).ready(function() {
                         tr.appendChild(th);
                     } else {
                         td = document.createElement('td');
-    
+
                         td.textContent = rows[i].split(',')[j]; // other data from spreadsheet
                         td.setAttribute('id', '' + i + j);
                         tr.appendChild(td);
@@ -239,33 +235,33 @@ $(document).ready(function() {
                 }
                 table.appendChild(tr);
             }
-    
+
             document.body.appendChild(table);
-    
+
             let index;
-    
+
             $('.spreadsheettable').click(function(event){
                 index = event.target.id;
-    
+
                 deselectAll();
-    
-    
+
+
                 if (index[0] == 0 && index[1] != 0) { //i=0 
                     // console.log("row header ",index[1],"clicked!"); 
                     selectColumn(index[1], rows);
                     graph(index, index[1], dataList);
-    
+
                 } else if (index[0] != 0 && index[1] == 0) {    //j=0
                     // console.log("col header ",index[0],"clicked!");
                     selectRow(index[0], rows);
                     graph(index, index[0], dataList);
-    
+
                 } else if (index[0] == 0 && index[1] == 0) { // i=0 & j=0
                     // do nothing 
                 } 
                 else {
                     // console.log("cell ",index[0],index[1],"clicked!");
-    
+
                     $('#' + index[0] + index[1]).attr('class','column');
                     // $('#' + index[0] + index[1]).attr('contenteditable','true');
                     $('#' + index[0] + index[1]).empty();
@@ -289,12 +285,7 @@ $(document).ready(function() {
                         }
                     });
                 }
-    
+
             });
-        },
-        failure:function(err){
-            console.log("failure");
-            console.log(err);  
-        }
-    });
+        });
 });
