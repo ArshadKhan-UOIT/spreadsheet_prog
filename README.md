@@ -11,4 +11,4 @@
 #### Lab 7 - A web-based spreadsheet program: Dynamic Content (Assignment 7)
 1. All Other Files are lab 7 
 1. I used Ajax jqurey from [here](https://github.com/kermattC/Lab-Demos-CSCI3230U/blob/D3-and-Ajax/scripts/barChartAndAjax.js) this is an example from TA: Matt's thursday lab channel in CSCI 3230U slack.  
-1. I also using the grades.csv file provided from TA: Matt since the other csv has the grades for everything /10 instead of /100, which is just midterm & final exam 
+1. I also using the grades.csv file provided from TA: Matt (from slack) since the other csv has the grades for everything /10 instead of /100, which is just midterm & final exam 
