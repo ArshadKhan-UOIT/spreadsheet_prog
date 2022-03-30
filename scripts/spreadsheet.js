@@ -193,7 +193,8 @@ function selectColumn(colIndex, data) {
 $(document).ready(function() {
     $.ajax({
         type: "GET", 
-        url: "./data/grades.csv",
+        // url: "./data/grades.csv",
+        url: "http://localhost:5500/data/grades.csv",
         dataType: "text",
         success: function(response){
             console.log("success"); 
