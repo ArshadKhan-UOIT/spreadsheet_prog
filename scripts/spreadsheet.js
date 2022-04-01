@@ -194,7 +194,7 @@ $(document).ready(function() {
     $.ajax({
         type: "GET", 
         // url: "./data/grades.csv",
-        url: "http://localhost:8000/data/grades.csv",
+        url: "http://172.31.103.40:8000/data/grades.csv",
         dataType: "text",
         success: function(response){
             console.log("success"); 

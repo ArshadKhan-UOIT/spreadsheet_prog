@@ -13,3 +13,5 @@
 1. I used Ajax jqurey from [here](https://github.com/kermattC/Lab-Demos-CSCI3230U/blob/D3-and-Ajax/scripts/barChartAndAjax.js) this is an example from TA: Matt's thursday lab channel in CSCI 3230U slack.  
 1. I also using the grades.csv file provided from TA: Matt (from slack) since the other csv has the grades for everything /10 instead of /100, which is just midterm & final exam 
 1. I used the following command ```python3 -m http.server 8000``` in the `spreadsheet_prog/` directory to have a python3 server running on port 8000 on localhost. So `grades.csv` is loaded with the following `url:` ```http://localhost:8000/data/grades.csv```.    
+
+![Lab 7 Screenshot](/img/Lab7_screenshot.png)
